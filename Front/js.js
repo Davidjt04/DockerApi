@@ -116,14 +116,4 @@ crearTarjeta("todos");
 
 
 
-
-
-
-
-
-
-
-
-
-
 });

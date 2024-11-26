@@ -5,7 +5,7 @@ FROM php:8.1-apache
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Copiar el código de la aplicación
-COPY ./var/www/html/
+COPY ./ /var/www/html/
 
 # Establecer permisos
 # Garantiza que Apache tenga acceso a los archivos dentro del contenedor

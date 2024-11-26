@@ -1,5 +1,5 @@
 # Usar la imagen base de PHP
-FROM alpine:
+FROM alpine
 
 # Crear el directorio donde se almacenarán los archivos estáticos
 WORKDIR /var/www/html

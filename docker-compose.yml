@@ -1,14 +1,12 @@
-version: '2.29.2'
-
 services:
-  Front:
+  front:
     build:
       context: ./Front
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - db
-      - Back
+      - back
 
   db:
     build:
@@ -17,7 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydb
     
-  Back:
+  back:
     build:
       context: ./Back
     depends_on:
