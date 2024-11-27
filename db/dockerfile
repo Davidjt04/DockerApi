@@ -6,4 +6,4 @@ ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_DATABASE=kebab
 
 # Copiar scripts de inicialización si es necesario
-# COPY ./init.sql /docker-entrypoint-initdb.d/
+COPY ./kebab /docker-entrypoint-initdb.d/
