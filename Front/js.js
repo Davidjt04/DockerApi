@@ -3,7 +3,7 @@ window.addEventListener('load',  function () { // Cambiamos a una función asín
     //REQUESTS DE LOS INGREDIENTES
     //----------------------------------------------------------------
     // Hacer la request para mandar los ingredientes a la API
-    const url = 'http://localhost/2DAW/SERVIDOR/kebab/api/ApiIngredientes.php';
+    const url = 'http://back:80/2DAW/SERVIDOR/kebab/api/ApiIngredientes.php';
 
     function cogerIngrediente(id) {
         // Hacer la solicitud HTTP
@@ -30,12 +30,14 @@ window.addEventListener('load',  function () { // Cambiamos a una función asín
         });
     }
 
-    async function cogeringredientes(){
-        //recojo los datos del get 
-        $ingedientes = await cogerIngrediente();
-        return $ingredientes;
+    // async function cogeringredientes(){
+    //     //recojo los datos del get 
+    //     $ingedientes = await cogerIngrediente(1);
+    //     return $ingredientes;
         
-    }
+    // }
+
+
     // cogerIngrediente(1);
 
     // async function llevarIngredientePost(){

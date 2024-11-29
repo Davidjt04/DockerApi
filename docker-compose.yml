@@ -5,18 +5,18 @@ services:
     ports:
       - "8081:80"
     depends_on:
-      - db
+      # - db
       - back
 
-  db:
-    build:
-      context: ./db
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: kebab
+  # db:
+  #   build:
+  #     context: ./db
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: kebab
     
   back:
     build:
       context: ./Back
-    depends_on:
-    - db
+    # depends_on:
+    # - db

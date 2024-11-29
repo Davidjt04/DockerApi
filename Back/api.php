@@ -8,7 +8,7 @@ $control = new controlIngrediente();
 switch ($request) {
     case 'GET':
         $cadena = $_GET['id'];
-        // var_dump($cadena);
+        var_dump($cadena);
         // var_dump($cadena);
         //Creo un objeto controlador
         $tupla = $control->cogerDatos($cadena);

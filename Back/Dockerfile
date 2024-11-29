@@ -4,8 +4,11 @@ FROM php:8.1-apache
 # Instalar extensiones necesarias
 RUN docker-php-ext-install pdo pdo_mysql
 
+# Crear el directorio donde se almacenarán los archivos estáticos
+WORKDIR /var/www/html
+
 # Copiar el código de la aplicación
-COPY ./ /var/www/html/
+COPY ./api.php .
 
 # Establecer permisos
 # Garantiza que Apache tenga acceso a los archivos dentro del contenedor
