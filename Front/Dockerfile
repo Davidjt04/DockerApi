@@ -1,11 +1,14 @@
 # Usar la imagen base de PHP
-FROM nginx:alpine 
+FROM php:8.1-apache
 
-# Crear el directorio donde se almacenarán los archivos estáticos
-WORKDIR /var/www/html
+
+# Exponer el puerto 81
+EXPOSE 80
 
 # Copiar el código de la aplicación
-COPY ./js.js .
+COPY ./ /var/www/html/
 
-# Asegúrate de que Nginx se ejecute en primer plano y, si falla, mantener el contenedor activo
-CMD ["sh", "-c", "nginx -g 'daemon off;' || tail -f /dev/null"]
+# Establecer los permisos correctos para el directorio de la aplicación
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+

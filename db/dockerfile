@@ -1,9 +1,5 @@
 # Usar la imagen base de MySQL
-FROM mysql:5.7
+FROM mysql:latest
 
-# Establecer variables de entorno
-ENV MYSQL_ROOT_PASSWORD=root
-ENV MYSQL_DATABASE=kebab
-
-# Copiar scripts de inicialización si es necesario
-COPY ./kebab /docker-entrypoint-initdb.d/
+# Copiar el script de inicialización
+COPY ./init.sql /docker-entrypoint-initdb.d/

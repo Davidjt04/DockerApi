@@ -2,21 +2,24 @@ services:
   front:
     build:
       context: ./Front
+    container_name: front
     ports:
       - "8081:80"
     depends_on:
-      # - db
+      - db
       - back
 
-  # db:
-  #   build:
-  #     context: ./db
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: root
-  #     MYSQL_DATABASE: kebab
+  db:
+    build:
+      context: ./db
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: proyectodocker 
     
   back:
     build:
       context: ./Back
-    # depends_on:
-    # - db
+    container_name: back
+    depends_on:
+    - db

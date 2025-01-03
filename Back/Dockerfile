@@ -5,11 +5,8 @@ FROM php:8.1-apache
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Crear el directorio donde se almacenarán los archivos estáticos
-WORKDIR /var/www/html
-
-# Copiar el código de la aplicación
-COPY ./api.php .
+WORKDIR ./ /var/www/html
 
 # Establecer permisos
 # Garantiza que Apache tenga acceso a los archivos dentro del contenedor
-RUN chown -R www-data:www-data /var/www/html        
+# RUN chown -R www-data:www-data /var/www/html        
